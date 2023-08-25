@@ -1,0 +1,65 @@
+:root {
+  --size: 500px;
+  --distanceVal: 0.5;
+  --perspective: 2000px;
+}
+
+.cube {
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  transform-style: preserve-3d;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) perspective(var(--perspective)) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg);
+}
+
+.face {
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  position: absolute;
+}
+
+.f1 {
+  // background-color: green;
+  transform: rotateY(0deg) translateZ(calc(var(--size) * var(--distanceVal)))
+    translateY(0);
+}
+.f2 {
+  // background-color: blue;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * var(--distanceVal)))
+    translateY(0);
+}
+.f3 {
+  // background-color: red;
+  transform: rotateY(180deg) translateZ(calc(var(--size) * var(--distanceVal)))
+    translateY(0);
+}
+.f4 {
+  // background-color: yellow;
+  transform: rotateY(-90deg) translateZ(calc(var(--size) * var(--distanceVal)))
+    translateY(0);
+}
+.f5 {
+  // background-color: red;
+  transform: rotateX(-90deg) translateZ(calc(var(--size) * var(--distanceVal)))
+    translateY(0);
+}
+.f6 {
+  // background-color: yellow;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * var(--distanceVal)))
+    translateY(0);
+}
+
+@keyframes Rotate {
+  0% {
+    transform: translate(-50%, -50%) perspective(var(--perspective))
+      rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) perspective(var(--perspective))
+      rotateX(360deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
